@@ -25,7 +25,8 @@ class App extends Component {
     
                 <section name="main">
                     <EmployeeList employees={this.state.employees} />
-                    <InfoCard employees={this.state.employees} />
+                    
+                    {/* <InfoCard employees={this.state.employees} /> */}
                 </section>
             </>
         );

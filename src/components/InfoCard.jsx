@@ -5,12 +5,12 @@ import { Card, Image } from 'semantic-ui-react'
 
 const InfoCard = (props) => {
         
-    let employee1 = props.employees[0];
-    debugger
+    let employee = props.employee
+  
     return (
-        // this.makeCard()
+       
         <Card>
-            <Image src={props && props.employees[0]} wrapped ui={false}/>
+            <Image src={employee.avatar} wrapped ui={false}/>
             <Card.Description>
                     
             </Card.Description>
