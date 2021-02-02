@@ -5,18 +5,19 @@ import { Item, Button } from 'semantic-ui-react'
 
 const EmployeeList = ({ employees: list, children }) => {
 
-  let employeeList;
-  employeeList = list.map(employee => {
+  
+  let employeeList = list.map(employee => {
+    
     return (
-      <Item >
+      <Item className="bordered" >
         <Item.Image size="tiny" src={employee.avatar} />
         <Item.Content verticalAlign='middle'>
           <Item.Header>{employee.first_name} {employee.last_name}</Item.Header>
           <Item.Description>
             {employee.email}
           </Item.Description>
-          <Item.Extra>
-            <Button floated='right'>Action</Button>
+          <Item.Extra >
+            <Button size='tiny' floated='right'>More Info</Button>
         </Item.Extra>
         </Item.Content>
       </Item>
@@ -25,7 +26,7 @@ const EmployeeList = ({ employees: list, children }) => {
   });
 
   return (
-    <Item.Group>
+    <Item.Group className="list-container">
       {employeeList}
     </Item.Group>
   )

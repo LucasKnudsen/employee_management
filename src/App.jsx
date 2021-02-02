@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-
+import { Container } from 'semantic-ui-react'
 
 import EmployeeList from './components/EmployeeList'
 
@@ -16,17 +16,16 @@ class App extends Component {
 
   render() {
     return (
-      <div className="main-container">
-        <section name="header">
+      <Container>
+        <header name="header">
           <h1>Employee list</h1>
-        </section>
+        </header>
 
-        <section className="main-container" name="main">
+        <main className="main-container" name="main">
           <EmployeeList employees={this.state.employees} />
-
+        </main>
           {/* <InfoCard employees={this.state.employees} /> */}
-        </section>
-      </div>
+      </Container>
     );
   }
 }
