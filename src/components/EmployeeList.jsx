@@ -9,7 +9,7 @@ const EmployeeList = ({ employees: list, children }) => {
   let employeeList = list.map(employee => {
     
     return (
-      <Item className="bordered" >
+      <Item key={employee.id} className="bordered" >
         <Item.Image size="tiny" src={employee.avatar} />
         <Item.Content verticalAlign='middle'>
           <Item.Header>{employee.first_name} {employee.last_name}</Item.Header>
