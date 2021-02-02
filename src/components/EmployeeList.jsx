@@ -3,11 +3,11 @@ import { Item, Button } from 'semantic-ui-react'
 // import axios from 'axios'
 
 
-const EmployeeList = ({ employees: list, children }) => {
+const EmployeeList = ({ employees }) => {
 
-  
-  let employeeList = list.map(employee => {
-    
+
+  let employeeList = employees.map(employee => {
+
     return (
       <Item key={employee.id} className="bordered" >
         <Item.Image size="tiny" src={employee.avatar} />
@@ -18,15 +18,14 @@ const EmployeeList = ({ employees: list, children }) => {
           </Item.Description>
           <Item.Extra >
             <Button size='tiny' floated='right'>More Info</Button>
-        </Item.Extra>
+          </Item.Extra>
         </Item.Content>
       </Item>
-
     )
   });
 
   return (
-    <Item.Group className="list-container">
+    <Item.Group role="list" className="list-container">
       {employeeList}
     </Item.Group>
   )

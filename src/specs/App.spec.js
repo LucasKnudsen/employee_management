@@ -1,6 +1,5 @@
 import { render, screen } from '@testing-library/react';
-import EmployeeList from '../components/EmployeeList';
-
+import App from '../App'
 
 const mockedResponse = {
   "page": 1,
@@ -18,12 +17,13 @@ const mockedResponse = {
   "support": { "url": "https://reqres.in/#support-heading", "text": "To keep ReqRes free, contributions towards server costs are appreciated!" }
 }
 
-
 beforeEach(() => {
-  render(<EmployeeList employees={mockedResponse.data} />);
-});
+  jest.spyOn(window, 'fetch').mockResolvedValue({
+    json: async () => (mockedResponse)
+  })
+  render(<App />)
+})
 
-it('renders listElement', () => {
-  const listElement = screen.getByRole('list')
-  expect(listElement.children.length).toBe(5);
+it('calls the API using XHR on render', () => {
+  expect(fetch).toHaveBeenCalledTimes(1);
 });
