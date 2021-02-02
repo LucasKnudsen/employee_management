@@ -1,6 +1,6 @@
 import React from 'react'
 import { Item, Button } from 'semantic-ui-react'
-// import axios from 'axios'
+import EmployeeModal from './EmployeeModal'
 
 
 const EmployeeList = ({ employees }) => {
@@ -17,7 +17,7 @@ const EmployeeList = ({ employees }) => {
             {employee.email}
           </Item.Description>
           <Item.Extra >
-            <Button size='tiny' floated='right'>More Info</Button>
+            <EmployeeModal employee={employee} />
           </Item.Extra>
         </Item.Content>
       </Item>

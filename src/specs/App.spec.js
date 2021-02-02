@@ -24,6 +24,6 @@ beforeEach(() => {
   render(<App />)
 })
 
-it('calls the API using XHR on render', () => {
+it('calls the API using fetch()', () => {
   expect(fetch).toHaveBeenCalledTimes(1);
 });

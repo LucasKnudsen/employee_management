@@ -24,7 +24,6 @@ class App extends Component {
         <main className="main-container" name="main">
           <EmployeeList employees={this.state.employees} />
         </main>
-          {/* <InfoCard employees={this.state.employees} /> */}
       </Container>
     );
   }
