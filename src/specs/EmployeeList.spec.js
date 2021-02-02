@@ -20,19 +20,19 @@ const mockedResponse = {
 
 let axiosSpy;
 beforeEach(() => {
-    jest.spyOn(window, 'fetch').mockResolvedValue({
-        json: async () => (mockedResponse)
-    })
-    
-    render(<EmployeeList />);
+  jest.spyOn(window, 'fetch').mockResolvedValue({
+    json: async () => (mockedResponse)
+  })
+
+  render(<EmployeeList />);
 });
 
 it('calls the API using XHR on render', () => {
-    expect(fetch).toHaveBeenCalledTimes(1);
+  expect(fetch).toHaveBeenCalledTimes(1);
 });
 
 it('renders listElement', () => {
-    const listElement = screen.getByRole('list')
-    
-    expect(listElement.children.length).toBe(5);
+  const listElement = screen.getByRole('list')
+
+  expect(listElement.children.length).toBe(5);
 });
