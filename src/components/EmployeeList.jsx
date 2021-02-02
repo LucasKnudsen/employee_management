@@ -6,17 +6,13 @@ class EmployeeList extends Component {
         employees: []
     }
 
-    componentDidMount() {
-        this.fetchData()
+    async componentDidMount() {
+        // let response = await axios.get('https://reqres.in/api/users?per_page=5')
+        let response = await (await fetch('https://reqres.in/api/users?per_page=5')).json()
+        this.setState({ employees: response.data})
     }
     
-    fetchData = async () => {
-        let response = await axios.get('https://reqres.in/api/users?per_page=5')
-        this.setState({ employees: response.data.data })
-    }
 
-   
-    
     render() {
         const { employees } = this.state;
         let employeeList;
